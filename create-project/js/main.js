@@ -1,2 +1,2 @@
 import './style.css'
-import {items} from ''
+import {animals} from '/arr.js'
