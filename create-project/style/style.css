@@ -1,9 +1,9 @@
 :root {
-  --xaxa:#FAFF70;
+  --xaxa:#83C9F4;
   --noob:#E3E7AF;
-  --top:#AD91A3;
-  --mid:#DF7373;
-  --hehe:#52796F;
+  --top:#222A68;
+  --mid:#D95D39;
+  --hehe:#136F63;
   --moyai:#F3C677;
   --yar:#7FBEAB;
       --primary:var(--hehe);
@@ -33,7 +33,7 @@
   
      .laquestion {
        font-size: 1rem;
-       background-color: var(--moyai);
+       background-color: var(--top);
        padding: 2%;
        margin: 2rem 2rem;
        width: 450px;
@@ -54,6 +54,6 @@
     h1{
      font-size: 3rem;
      text-align: center;
-     color: var(--moyai);
+     color: var(--xaxa);
     }
  

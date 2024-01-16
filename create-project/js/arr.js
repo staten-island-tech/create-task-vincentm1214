@@ -1,7 +1,7 @@
 const animals=[
     {
     name:"Koala",
-    legs:4,
+    legs:2,
     diet:"herbivore",
     native:"Australia",
     Pet:false,
@@ -95,7 +95,7 @@ const animals=[
     diet:"herbivores",
     native:"South America",
     pet:true,
-    Hostile:null,
+    Hostile:false,
     image:'https://preview.redd.it/what-the-handsome-face-v0-85zx1e5m1aja1.jpg?width=640&crop=smart&auto=webp&s=caea1329730048e677695040ac102b76dfd16bf5',
     },    
     {
@@ -106,6 +106,6 @@ const animals=[
     Pet:false,
     Hostile:false,
     image:'https://media.istockphoto.com/id/472999850/photo/cute-closeup-of-chinstrap-penguin.jpg?s=612x612&w=0&k=20&c=kTEGYV5kBnon5MQbuwgVrFzI8UbT4NCbqU03LxmeS48=',
-    },    
+    }    
     ]
 export{animals};
