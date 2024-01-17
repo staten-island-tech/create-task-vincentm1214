@@ -1,3 +1,18 @@
+const DOMSelectors={
+    body:document.querySelector(".body"),
+    card:document.querySelector('#card'),
+    app:document.querySelector('#container'),
+    org:document.querySelector('#name'),
+    ger:document.querySelector('#legs'),
+    heh:document.querySelector('#diet'),
+    lol:document.querySelector('#native'),
+    man:document.querySelector('#pet'),
+    wom:document.querySelector('#hostile'),
+    zee:document.querySelector('#image'),
+    button:document.querySelectorAll('.button')
+  }
+
+
 import '../style/style.css'
 const animals=[
     {
@@ -34,7 +49,7 @@ const animals=[
     native:"Europe",
     pet:true,
     hostile:false,
-    image:'https://c02.purpledshub.com/uploads/sites/62/2022/09/Koala.-GettyImages-1266039701-46f8a64.jpg',
+    image:'https://static.vecteezy.com/system/resources/previews/027/121/847/non_2x/funny-rabbits-portrait-free-photo.jpg',
     },    
     {
     name:"Bird",
@@ -110,6 +125,15 @@ const animals=[
     }    
     ]
 
-
+    function makecard(animals) {
+        DOMSelectors.app.
+        animals.forEach((animal)=> DOMSelectors.card.insertAdjacentHTML(
+           "beforeend",
+        `<div class="laquestion">
+             <h2 class="name">${animal.name}</h2>
+             <h3 class="diet">${animal.diet}</h3>`
+           )
+         )
+        };
 
 console.log(animals);
