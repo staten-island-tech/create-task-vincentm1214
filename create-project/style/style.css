@@ -23,7 +23,7 @@
     }
   
   
-    .card {
+    .container {
        display: flex;
        align-items: center;
        text-align: center;
@@ -33,11 +33,11 @@
   
      .laquestion {
        font-size: 1rem;
-       background-color: var(--top);
+       background-color: var(--noob);
        padding: 2%;
        margin: 2rem 2rem;
        width: 450px;
-       height: 40vh;
+       height: 600px;
     }
  
     h3{
@@ -56,4 +56,8 @@
      text-align: center;
      color: var(--xaxa);
     }
- 
+    
+    .image{
+      height: 400px;
+      width:400px;
+    }
