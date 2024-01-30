@@ -3,7 +3,7 @@
   --noob:#E3E7AF;
   --top:#222A68;
   --mid:#D95D39;
-  --hehe:#136F63;
+  --hehe:#97A2FF;
   --moyai:#F3C677;
   --yar:#7FBEAB;
       --primary:var(--hehe);
@@ -22,7 +22,9 @@
        box-sizing: border-box;
     }
   
-  
+body{
+  background-color:pink;
+}
     .container {
        display: flex;
        align-items: center;
@@ -37,18 +39,12 @@
        padding: 2%;
        margin: 2rem 2rem;
        width: 450px;
-       height: 600px;
+       height: 700px;
     }
  
     h3{
      border-radius: 5px;
      margin-top: 2rem;
-    }
-  
-  
-    h4{
-     border-radius: 5px;
-     margin-top: 0rem;
     }
   
     h1{
@@ -60,4 +56,8 @@
     .image{
       height: 400px;
       width:400px;
+    }
+
+    .stat{
+      color:var(--hehe)
     }

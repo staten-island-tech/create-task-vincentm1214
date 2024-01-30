@@ -47,7 +47,7 @@ const animals=[
     legs:4,
     diet:"Herbivore",
     native:"Europe",
-    pet:"Legal",
+    pet:true,
     hostile:false,
     image:'https://static.vecteezy.com/system/resources/previews/027/121/847/non_2x/funny-rabbits-portrait-free-photo.jpg',
     },    
@@ -56,7 +56,7 @@ const animals=[
     legs:2,
     diet:"Omnivore",
     native:"Africa",
-    pet:"Legal",
+    pet:true,
     hostile:false,
     image:'https://i.pinimg.com/originals/7f/a3/8d/7fa38d40f6534d104e7b63b2d9d63e7b.jpg',
     },    
@@ -65,7 +65,7 @@ const animals=[
     legs:4,
     diet:"Herbivore",
     native:"Asia",
-    pet:"Illegal",
+    pet:false,
     hostile:false,
     image:'https://i.pinimg.com/736x/6d/0f/f0/6d0ff08bfabffe7cb7b71612d2f4b04d.jpg',
     },
@@ -74,7 +74,7 @@ const animals=[
     legs:2,
     diet:"Herbivore",
     native:"Australia",
-    pet:"Legal",
+    pet:true,
     hostile:false,
     image:'https://i.kym-cdn.com/news_feeds/icons/mobile/000/035/914/6d3.jpg',
     },    
@@ -83,7 +83,7 @@ const animals=[
     legs:4,
     diet:"Carnivore",
     native:"Australia",
-    pet:"Illegal",
+    pet:false,
     hostile:false,
     image:'https://i.pinimg.com/736x/c3/fb/2b/c3fb2b4136334c8fff20ece855a30d0a.jpg',
     },    
@@ -92,7 +92,7 @@ const animals=[
     legs:4,
     diet:"Carnivore",
     native:"North America",
-    pet:"Illegal",
+    pet:false,
     hostile:true,
     image:'https://www.somepets.com/wp-content/uploads/2013/08/sea-otter.jpg',
     },
@@ -101,7 +101,7 @@ const animals=[
     legs:4,
     diet:"Omnivore",
     native:"North America",
-    pet:"Illegal",
+    pet:false,
     hostile:false,
     image:'https://i.redd.it/npp5keyp0e881.jpg',
     },    
@@ -110,7 +110,7 @@ const animals=[
     legs:4,
     diet:"Herbivore",
     native:"South America",
-    pet:"Legal",
+    pet:true,
     hostile:false,
     image:'https://preview.redd.it/what-the-handsome-face-v0-85zx1e5m1aja1.jpg?width=640&crop=smart&auto=webp&s=caea1329730048e677695040ac102b76dfd16bf5',
     },    
@@ -119,7 +119,7 @@ const animals=[
     legs:2,
     diet:"Carnivore",
     native:"Antartica",
-    pet:"Illegal",
+    pet:false,
     hostile:false,
     image:'https://media.istockphoto.com/id/472999850/photo/cute-closeup-of-chinstrap-penguin.jpg?s=612x612&w=0&k=20&c=kTEGYV5kBnon5MQbuwgVrFzI8UbT4NCbqU03LxmeS48=',
     },
@@ -128,7 +128,7 @@ const animals=[
     legs:4,
     diet:"Carnivore",
     native:"North America",
-    pet:"Legal",
+    pet:true,
     hostile:false,
     image:'https://i.pinimg.com/564x/7f/26/e7/7f26e71b2c84e6b16d4f6d3fd8a58bca.jpg',
     },
@@ -137,7 +137,7 @@ const animals=[
     legs:4,
     diet:"Omnivore",
     native:"Asia",
-    pet:"Illegal",
+    pet:false,
     hostile:false,
     image:'https://i.pinimg.com/originals/ce/4b/a2/ce4ba2c0951482656df469b2eaf1ae00.jpg',
     },
@@ -146,23 +146,46 @@ const animals=[
     legs:0,
     diet:"Carnivore",
     native:"Australia",
-    pet:"Illegal",
+    pet:false,
     hostile:false,
     image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQveWkO3USLMQQIe8zpR0lMHYs1FWoKwgPLiFRPlC2UkCOFUj2f-DAHSuOjFLAvM_VAP8M&usqp=CAU',
-    }
-    ]
+    },
+    {name:"Bear",
+    legs:4,
+    diet:"Omnivore",
+    native:"North America",
+    pet:false,
+    hostile:true,
+    image:'https://th.bing.com/th/id/OIP.s4XxlzAETuU5Ss-RSSyy1wAAAA?rs=1&pid=ImgDetMain',
+    },
+]
 
     function makecard(animals) {
         document.querySelector(".container").insertAdjacentHTML(
             "beforeend",
         `<div class="laquestion">
              <h2 class="name">${animals.name}</h2>
-             <h3 class="diet">Diet: ${animals.diet}</h3>
-             <h3 class="diet">Can you own it: ${animals.pet}</h3>
-             <h3 class="diet">Diet: ${animals.hostile}</h3>
-             <h3 class="diet">Diet: ${animals.legs}</h3>
+             <h3 class="stat">Diet: ${animals.diet}</h3>
+             <h3 class="stat">Can you own it: ${animals.pet}</h3>
+             <h3 class="stat">Are they Hostile: ${animals.hostile}</h3>
+             <h3 class="stat">Legs: ${animals.legs}</h3>
              <img src="${animals.image}" class="image">`
            )
         };  
+
+        function filt() {
+            let boutons = document.querySelectorAll(".bouton")
+            boutons.forEach((bouton) => bouton.addEventListener("click", function () {
+              if(bouton.textContent.toLowerCase()==="show all"){document.querySelector(".card").innerHTML=''
+            makecard(animals.results);
+          }else{
+                 let stats = bouton.textContent.toLowerCase()
+                 let newArr = animals.results.filter((animal) => animal.difficulty.includes(diet,pet,hostile,legs))
+                 document.querySelector(".card").innerHTML = ""
+                 makecard(newArr)
+          }}))
+          }
+         
+          filt();
          
 animals.forEach(makecard);
