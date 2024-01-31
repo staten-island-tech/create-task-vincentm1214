@@ -2,14 +2,7 @@ const DOMSelectors={
     body:document.querySelector(".body"),
     card:document.querySelector('#card'),
     app:document.querySelector('.container'),
-    org:document.querySelector('#name'),
-    ger:document.querySelector('#legs'),
-    heh:document.querySelector('#diet'),
-    lol:document.querySelector('#native'),
-    man:document.querySelector('#pet'),
-    wom:document.querySelector('#hostile'),
-    zee:document.querySelector('#image'),
-    button:document.querySelectorAll('.button')
+    form:document.querySelector("#form"),
   }
 
 
@@ -173,19 +166,19 @@ const animals=[
            )
         };  
 
-        function filt() {
-            let boutons = document.querySelectorAll(".bouton")
-            boutons.forEach((bouton) => bouton.addEventListener("click", function () {
-              if(bouton.textContent.toLowerCase()==="show all"){document.querySelector(".card").innerHTML=''
-            makecard(animals.results);
+        DOMSelectors.form.addEventListener("submit",function(event){
+          event.preventDefault();
+          clearHTMLFields();
+          const lower=DOMSelectors.searchfor.value.toLowerCase();
+          const find=data.find((animals) => animals.name.toLowerCase()===lower);
+          clearSearch();
+
+          if(find){
+            makecard([find]);
           }else{
-                 let stats = bouton.textContent.toLowerCase()
-                 let newArr = animals.results.filter((animal) => animal.difficulty.includes(diet,pet,hostile,legs))
-                 document.querySelector(".card").innerHTML = ""
-                 makecard(newArr)
-          }}))
+            DOMSelectors.card.innerHTML=`
+            <div class="bad">
+            <h3>booooooooooooo</h3>
+            </div>`
           }
-         
-          filt();
-         
-animals.forEach(makecard);
+        });
