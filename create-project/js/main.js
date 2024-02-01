@@ -3,6 +3,7 @@ const DOMSelectors={
     card:document.querySelector('#card'),
     app:document.querySelector('.container'),
     form:document.querySelector("#form"),
+    searchfor:document.querySelector("#searchfor")
   }
 
 
@@ -166,11 +167,20 @@ const animals=[
            )
         };  
 
+        function clearHTMLFields() {
+          DOMSelectors.app.innerHTML="";
+        }
+
+        function clearSearch() {
+          DOMSelectors.searchfor.value="";
+        }
+
+
         DOMSelectors.form.addEventListener("submit",function(event){
           event.preventDefault();
           clearHTMLFields();
           const lower=DOMSelectors.searchfor.value.toLowerCase();
-          const find=data.find((animals) => animals.name.toLowerCase()===lower);
+          const find=animals.find((animals) => animals.name.toLowerCase()===lower);
           clearSearch();
 
           if(find){
@@ -182,3 +192,5 @@ const animals=[
             </div>`
           }
         });
+
+
