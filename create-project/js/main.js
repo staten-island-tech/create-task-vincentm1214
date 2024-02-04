@@ -5,7 +5,7 @@ const DOMSelectors={
     form:document.querySelector("#form"),
     searchfor:document.querySelector("#searchfor")
   }
-```import '../style/style.css'
+import '../style/style.css'
 const animals=[
    {
    name:"Koala",
