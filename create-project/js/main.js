@@ -1,4 +1,11 @@
-import '../style/style.css'
+const DOMSelectors={
+    body:document.querySelector(".body"),
+    card:document.querySelector('#card'),
+    app:document.querySelector('.container'),
+    form:document.querySelector("#form"),
+    searchfor:document.querySelector("#searchfor")
+  }
+```import '../style/style.css'
 const animals=[
    {
    name:"Koala",
